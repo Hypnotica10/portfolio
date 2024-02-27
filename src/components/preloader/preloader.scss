@@ -1,0 +1,50 @@
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    box-shadow: var(--box-shadow-1);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .line {
+        width: 1px;
+        height: 100%;
+        background-color: var(--bg-black-primary);
+        transition: var(--transition-ease-500);
+        animation: loading 1000ms linear forwards;
+    }
+}
+
+.preloader.loaded {
+    transition: var(--transition-ease-800);
+    pointer-events: none;
+    box-shadow: var(--box-shadow-2);
+
+    .line {
+        animation: loaded 500ms ease forwards;
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(0.3);
+    }
+}
+
+@keyframes loaded {
+    from {
+        transform: scaleY(0.3);
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 0;
+    }
+}

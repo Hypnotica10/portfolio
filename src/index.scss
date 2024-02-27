@@ -1,0 +1,102 @@
+@import './variables';
+
+/* Reset CSS */
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+form,
+label,
+header,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-gray);
+    border-radius: var(--radius-pill);
+}
+
+::selection {
+    background: var(--bg-green);
+    color: var(--text-white);
+}
+
+::-moz-selection {
+    background: var(--bg-green);
+    color: var(--text-white);
+}
+
+::-webkit-selection {
+    background: var(--bg-green);
+    color: var(--text-white);
+}
+
+body {
+    width: 100%;
+    height: auto;
+    font-family: var(--font);
+    background-color: var(--bg-black-primary);
+    color: var(--text-white);
+    font-size: var(--fs-2);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

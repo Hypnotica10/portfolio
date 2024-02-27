@@ -1,0 +1,53 @@
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-black-secondary);
+    z-index: 99999;
+    will-change: transform;
+    transform: translate(0, 100%);
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.overlay-up {
+    animation-name: overlayEffectUp;
+}
+
+.overlay-down {
+    animation-name: overlayEffectDown;
+}
+
+@keyframes overlayEffectUp {
+    0% {
+        transform: translate(0 , 100%);
+    }
+
+    35%,
+    65% {
+        transform: translate(0 , 0);
+    }
+
+    100% {
+        transform: translate(0 , -100%);
+    }
+}
+
+@keyframes overlayEffectDown {
+    0% {
+        transform: translate(0 , -100%);
+    }
+
+    35%,
+    65% {
+        transform: translate(0 , 0);
+    }
+
+    100% {
+        transform: translate(0 , 100%);
+    }
+}
