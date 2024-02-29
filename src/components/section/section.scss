@@ -1,0 +1,14 @@
+.section {
+    animation: fade 0.5s linear 1 both;
+
+    .lightbox-content {
+        padding: 70px 0;
+    }
+
+    .lightbox-close {
+        position: fixed;
+        right: 4vw;
+        top: 35px;
+        cursor: pointer;
+    }
+}

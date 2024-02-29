@@ -1,8 +1,54 @@
-import Home from "./home/Home";
+import { useState } from "react";
+import Home from './home/Home';
+import About from "./about/About";
+import Resume from "./resume/Resume";
+import Contact from "./contact/Contact";
+import { Overlay } from "../components";
+import { useEffect } from "react";
 
 const Layout = () => {
+    const [screen, setScreen] = useState(2);
+    const [overlayActive, setOverlayActive] = useState('');
+    const [delay, setDelay] = useState(true);
+
+    const handleClick = (id) => {
+        setDelay(false)
+        setOverlayActive('overlay-up');
+        setScreen(id);
+    }
+
+    const handleBackHome = () => {
+        setDelay(false)
+        setOverlayActive('overlay-down');
+        setScreen(0);
+    }
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setDelay(true);
+        }, 1000)
+
+        return () => clearTimeout(timeout)
+    }, [screen])
+
+    const render = (screen) => {
+        switch (screen) {
+            case 0:
+                return <Home handeClickChangeScreen={handleClick} />;
+            case 1:
+                return <About handleClickBackToHome={handleBackHome} />;
+            case 2:
+                return <Resume handleClickBackToHome={handleBackHome} />;
+            case 3:
+                return <Contact handleClickBackToHome={handleBackHome} />;
+        }
+    }
+
     return (
-        <Home></Home>
+        <>
+            <Overlay classActive={overlayActive}></Overlay>
+            {delay && render(screen)}
+        </>
     );
 };
 

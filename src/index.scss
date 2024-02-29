@@ -100,3 +100,20 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
+
+.button {
+    display: inline-block;
+    color: var(--text-white);
+    padding: 10px 35px;
+    background-color: var(--bg-green);
+    border-radius: var(--radius-pill);
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

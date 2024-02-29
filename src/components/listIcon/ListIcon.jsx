@@ -1,27 +1,33 @@
 import './listIcon.scss';
 import { FaFacebookSquare, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { listHref } from '../../data';
+import PropTypes from 'prop-types';
 
-const ListIcon = () => {
+const ListIcon = ({ classListIcon }) => {
     return (
-        <div className='list-icon'>
-            <a target='_blank' href='https://github.com/' className=''>
+        <div className={classListIcon}>
+            <a target='_blank' href={listHref.github} className=''>
                 <FaGithub color='white' />
             </a>
-            <a target='_blank' href='https://www.facebook.com/' className=''>
+            <a target='_blank' href={listHref.facebook} className=''>
                 <FaFacebookSquare color='white' />
             </a>
-            <a target='_blank' href='mailto:abc@gmail.com' className=''>
+            <a target='_blank' href={listHref.email} className=''>
                 <SiGmail color='white' />
             </a>
-            <a target='_blank' href='https://www.linkedin.com/' className=''>
+            <a target='_blank' href={listHref.linkedin} className=''>
                 <FaLinkedin color='white' />
             </a>
-            <a target='_blank' href='https://www.instagram.com/' className=''>
+            <a target='_blank' href={listHref.instagram} className=''>
                 <FaInstagram color='white' />
             </a>
         </div>
     );
 };
+
+ListIcon.propTypes = {
+    classListIcon: PropTypes.string
+}
 
 export default ListIcon;
