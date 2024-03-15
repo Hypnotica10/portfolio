@@ -56,6 +56,37 @@ a {
     text-decoration: none;
 }
 
+button {
+    font-family: var(--font);
+}
+
+input,
+textarea {
+    font-family: var(--font);
+    font-size: var(--fs-2);
+    border: 0;
+    outline: 0;
+    background-color: #161616;
+    width: 100%;
+    padding: 12px 16px;
+    color: var(--text-white);
+    position: relative;
+    transition: all ease-in-out 150ms;
+    border-bottom: 1px solid transparent;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-bottom-color: var(--border-green);
+}
+
+::placeholder {
+    color: var(--text-gray);
+}
+
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -103,16 +134,27 @@ body {
 
 .button {
     display: inline-block;
+    border: 0;
+    outline: none;
     color: var(--text-white);
     padding: 10px 35px;
     background-color: var(--bg-green);
     border-radius: var(--radius-pill);
+    cursor: pointer;
+}
+
+h6.title {
+    font-size: var(--fs-h6);
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: capitalize;
 }
 
 @keyframes fade {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }

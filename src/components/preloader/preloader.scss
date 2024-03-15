@@ -1,50 +1,69 @@
-
 .preloader {
     position: fixed;
-    width: 100%;
-    height: 100vh;
-    box-shadow: var(--box-shadow-1);
-    top: 0;
     left: 0;
-    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .line {
-        width: 1px;
-        height: 100%;
-        background-color: var(--bg-black-primary);
-        transition: var(--transition-ease-500);
-        animation: loading 1000ms linear forwards;
+    .bounceball {
+        position: relative;
+        display: inline-block;
+        height: 37px;
+        width: 15px;
+    }
+
+    .bounceball:before {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #fff;
+        transform-origin: 50%;
+        animation: bounceLoader 500ms alternate infinite ease;
     }
 }
 
-.preloader.loaded {
-    transition: var(--transition-ease-800);
-    pointer-events: none;
-    box-shadow: var(--box-shadow-2);
-
-    .line {
-        animation: loaded 500ms ease forwards;
-    }
+.isLoaded {
+    display: none;
 }
 
-@keyframes loading {
-    from {
-        transform: scaleY(0);
-    }
-    to {
-        transform: scaleY(0.3);
-    }
+.preloader.preloaded {
+    animation: blur 500ms ease-in-out 1;
 }
 
-@keyframes loaded {
-    from {
-        transform: scaleY(0.3);
+@keyframes blur {
+    0% {
+        opacity: 1;
     }
-    to {
-        transform: scaleY(1);
+
+    100% {
         opacity: 0;
+    }
+}
+
+@keyframes bounceLoader {
+    0% {
+        top: 30px;
+        height: 5px;
+        border-radius: 60px 60px 20px 20px;
+        transform: scaleX(2);
+    }
+
+    35% {
+        height: 15px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+
+    100% {
+        top: 0;
     }
 }

@@ -1,0 +1,131 @@
+.project-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &:hover .project-image img {
+        border-color: var(--border-green);
+    }
+}
+
+.project-image {
+    flex: 0 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+
+    img {
+        border: 2px solid transparent;
+        border-radius: 10px;
+        transition: all linear 0.25s;
+    }
+}
+
+.project-content {
+    padding-left: 20px;
+    flex: 0 0 calc(100% / 12 * 9);
+
+    h6>a {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 5px;
+        font-size: var(--fs-3);
+        color: var(--text-white);
+        font-weight: 500;
+        transition: all ease-in-out 0.25s;
+
+        svg {
+            transition: all ease-in-out 0.25s;
+        }
+
+        &:hover {
+            color: var(--text-green);
+
+            svg {
+                transform: translate(30%, -30%);
+                color: var(--text-green);
+            }
+        }
+    }
+
+    .project-position {
+        color: var(--text-gray);
+        font-size: var(--fs-1);
+    }
+
+    .project-desc {
+        margin-top: 15px;
+    }
+
+    .project-download {
+        margin-top: 10px;
+
+        a {
+            color: var(--text-white);
+            transition: all ease-in-out 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+
+            &:hover {
+                color: var(--text-green);
+            }
+        }
+    }
+
+    .project-tech {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        span {
+            background-color: rgba(45, 212, 191, .1);
+            font-size: var(--fs-1);
+            padding: 4px 12px;
+            font-weight: 500;
+            color: var(--text-green);
+            border-radius: var(--radius-pill);
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .project-content {
+        h6>a {
+            font-size: var(--fs-2);
+        }
+    }
+
+    .project-desc,
+    .project-download>a {
+        font-size: var(--fs-1);
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .project-item {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
+    .project-content {
+        padding: 0;
+    }
+
+    .project-content .project-tech span {
+        font-size: 12px;
+    }
+
+    .project-image {
+        flex: 0 0 calc(100% / 12 * 5);
+        max-width: calc(100% / 12 * 5);
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .project-image {
+        flex: 0 0 calc(100% / 12 * 8);
+        max-width: calc(100% / 12 * 8);
+    }
+}

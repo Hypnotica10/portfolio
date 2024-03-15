@@ -5,9 +5,10 @@ import Resume from "./resume/Resume";
 import Contact from "./contact/Contact";
 import { Overlay } from "../components";
 import { useEffect } from "react";
+import Project from "./project/Project";
 
 const Layout = () => {
-    const [screen, setScreen] = useState(2);
+    const [screen, setScreen] = useState(4);
     const [overlayActive, setOverlayActive] = useState('');
     const [delay, setDelay] = useState(true);
 
@@ -40,6 +41,8 @@ const Layout = () => {
             case 2:
                 return <Resume handleClickBackToHome={handleBackHome} />;
             case 3:
+                return <Project handleClickBackToHome={handleBackHome} />;
+            case 4:
                 return <Contact handleClickBackToHome={handleBackHome} />;
         }
     }
