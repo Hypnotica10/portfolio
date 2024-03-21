@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import Project from "./project/Project";
 
 const Layout = () => {
-    const [screen, setScreen] = useState(4);
+    const [screen, setScreen] = useState(0);
     const [overlayActive, setOverlayActive] = useState('');
     const [delay, setDelay] = useState(true);
 
