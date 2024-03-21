@@ -1,13 +1,14 @@
 import { FiArrowUpRight, FiDownload } from 'react-icons/fi';
 import { listProject } from '../../data';
 import PropTypes from 'prop-types';
-import './listProject.scss'
+import './listProject.scss';
 
 const Project = ({ item }) => {
+    const imgUrl = new URL(`../../assets/project/${item.image}`, import.meta.url).href;
     return (
         <div className='project-item'>
             <div className='project-image'>
-                <a href={item.githubLink} target='_blank' className=''><img src={`../src/assets/project/${item.image}`} alt='' className='image' /></a>
+                <a href={item.githubLink} target='_blank' className=''><img src={imgUrl} alt='' className='image' /></a>
             </div>
             <div className='project-content'>
                 <h6 className='project-name'>
